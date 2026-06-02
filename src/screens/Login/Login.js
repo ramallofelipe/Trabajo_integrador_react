@@ -13,9 +13,9 @@ function Login(props) {
     const [loginError, setLoginError] = useState('');
     
     function onSubmit (email, pass) {
-        if(mail.includes('@')){
+        if(!email.includes('@')){
             setLoginError("Email mal escrito")
-        } else if(pass < 6){
+        } else if(pass.length < 6){
             setLoginError("La contrasena debe tener mas de 6 caracteres")
         } else{
             auth.signInWithEmailAndPassword(email, pass)
@@ -24,7 +24,7 @@ function Login(props) {
         props.navigation.navigate('HolaMenu')
     })
     .catch(error => {
-        setLoginError('Credenciales inválidas.')
+        setLoginError(error.message)
     })
         }
    

@@ -1,6 +1,5 @@
 import { Pressable, View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
-import DynamicForm from '../../components/DynamicForm/DynamicForm';
 
 
 

@@ -5,9 +5,9 @@ import { auth, db } from '../../firebase/config';
 
 function Register(props) {
 
-    const [mail, setMail] = useState();
-    const [contraseña, setContraseña] = useState();
-    const [usuario, setUsuario] = useState();
+    const [mail, setMail] = useState('');
+    const [contraseña, setContraseña] = useState('');
+    const [usuario, setUsuario] = useState('');
 
     const [register, setRegister] = useState(false);
     const [registerError, setRegisterError] = useState('');
@@ -39,7 +39,7 @@ function Register(props) {
                     <TextInput style={styles.formulario} 
                         keyboardType='default'
                         placeholder='Nombre de Usuario'
-                        secureTextEntry={true} 
+                        secureTextEntry={false} 
                         onChangeText={ texto=> setUsuario(texto) }
                         value={usuario}/>
                     <TextInput style={styles.formulario} 
