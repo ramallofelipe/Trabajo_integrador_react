@@ -17,15 +17,21 @@ function Register(props) {
       .then( response => {
         setRegister(true);
         props.navigation.navigate('Login');
-        return db.collection('users').add({
-                    email: mail,              
-                    username: usuario,        
-                    createdAt: new Date()     
-                });
- })
-      .catch( error => {
+        db.collection('users').add({
+            email: mail,              
+            username: usuario,        
+            createdAt: Date.now()     
+        });
+      })
+          .then(=>
+            {setRegister(true)};
+          )
+          .catch(e => {setRegisterError(e)})
+    .catch( error => {
         setRegisterError(error.message)
- })
+      })
+useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
+ 
     }
   return (
     <View style = {styles.container}>

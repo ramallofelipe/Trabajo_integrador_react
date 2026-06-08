@@ -1,5 +1,5 @@
 import { Pressable, View, Text, StyleSheet, TextInput } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Register from '../Register/Register';
 import HolaMenu from '../../components/HolaMenu/HolaMenu';
 import { auth } from '../../firebase/config'
@@ -27,8 +27,8 @@ function Login(props) {
         setLoginError(error.message)
     })
         }
-   
  }
+ useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
 
     return(
         <View style={styles.container}>

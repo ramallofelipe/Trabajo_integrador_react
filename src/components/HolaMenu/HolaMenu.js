@@ -16,10 +16,10 @@ function HolaMenu (){
     
     return(
         <Tab.Navigator screenOptions={ { tabBarShowLabel: false } }>
-
+            stack
             <Tab.Screen 
             name = 'Home' 
-            component = {Home}  
+            component = {Home}crearpost  
             options = {{ tabBarIcon: () => <AntDesign name="home" size={24} color="black" />}} 
             />
             <Tab.Screen 
