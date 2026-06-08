@@ -23,13 +23,6 @@ function Register(props) {
             createdAt: Date.now()     
         });
       })
-          .then(=>
-            {setRegister(true)};
-          )
-          .catch(e => {setRegisterError(e)})
-    .catch( error => {
-        setRegisterError(error.message)
-      })
 useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
  
     }

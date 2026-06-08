@@ -4,31 +4,43 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import Home from '../../screens/Home/Home'
 import Profile from '../../screens/Profile/Profile'
+import Stackmenu from '../Stackmenu/Stackmenu' 
+import Post from '../../screens/Post/Post'
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
 function HolaMenu (){
     
     return(
-        <Tab.Navigator screenOptions={ { tabBarShowLabel: false } }>
-            stack
-            <Tab.Screen 
-            name = 'Home' 
-            component = {Home}crearpost  
+            
+        <Stack.Navigator screenOptions={ { tabBarShowLabel: false } }>
+            
+            <Stack.Screen 
+            name = 'Stackmenu' 
+            component = {Stackmenu}  
             options = {{ tabBarIcon: () => <AntDesign name="home" size={24} color="black" />}} 
             />
-            <Tab.Screen 
+            <Stack.Screen 
+            name = 'Post' 
+            component = {Post} 
+            options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />}} 
+            />
+            <Stack.Screen 
             name = 'Profile' 
             component = {Profile} 
             options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />}} 
             />
 
-        </Tab.Navigator>
+        </Stack.Navigator>
+      
     )
        
 }
