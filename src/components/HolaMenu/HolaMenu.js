@@ -15,31 +15,31 @@ import Profile from '../../screens/Profile/Profile'
 import Stackmenu from '../Stackmenu/Stackmenu' 
 import Post from '../../screens/Post/Post'
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function HolaMenu (){
     
     return(
             
-        <Stack.Navigator screenOptions={ { tabBarShowLabel: false } }>
+        <Tab.Navigator screenOptions={ { tabBarShowLabel: false } }>
             
-            <Stack.Screen 
+            <Tab.Screen 
             name = 'Stackmenu' 
             component = {Stackmenu}  
             options = {{ tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,  headerShown: false }} 
             />
-            <Stack.Screen 
+            <Tab.Screen 
             name = 'Post' 
             component = {Post} 
             options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />,  headerShown: false}} 
             />
-            <Stack.Screen 
+            <Tab.Screen 
             name = 'Profile' 
             component = {Profile} 
             options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />,  headerShown: false}} 
             />
 
-        </Stack.Navigator>
+        </Tab.Navigator>
       
     )
        
