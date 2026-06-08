@@ -1,3 +1,31 @@
-db.collection('posts').doc(useLinkProps.route.params.id).update({
-    comentarios:
-})
+import React from 'react';
+import {Pressable, View, Text} from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { FontAwesome } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
+
+
+const Stack = createNativeStackNavigator();
+
+function Comentarios (){
+    
+    
+       
+}
+
+const styles = StyleSheet.create({
+container: {
+    fontSize: 16,
+    alignItems: 'center',
+    width: 430
+  },
+}) 
+
+export default Comentarios

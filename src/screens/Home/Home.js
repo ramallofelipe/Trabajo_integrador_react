@@ -1,10 +1,15 @@
-import { Pressable, View, Text } from 'react-native';
-import { StyleSheet } from 'react-native';
-import { FlatList } from 'react-native-web';
+import { Pressable, View, Text, StyleSheet, TextInput } from 'react-native';
+import { useEffect, useState } from 'react';
+import { auth, db } from '../../firebase/config'
+import { FlatList } from 'react-native';
+import { styleSheet } from 'react-native';
+
 
 
 
 function Home() {
+    const [Loading, setLoading] = useState(true);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {auth.onAuthStateChanged(user => {if (!user){ props.navigation.navigate('Login')}})},[])
     db.collection('psots').onSnapshot(
@@ -16,13 +21,13 @@ function Home() {
                     data:doc.data()
                 })
             })
-            setPosteos('posts')
-            setLoading(flase)
+            setPosts('posts')
+            setLoading(false)
         }
     )
     return(
         <View style={styles.container}>
-           {Loading ? a:<FlatList></FlatList>}
+           {Loading ? <Text>hols</Text>:<FlatList></FlatList>}
         </View>
     )
 }

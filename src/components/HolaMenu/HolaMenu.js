@@ -26,17 +26,17 @@ function HolaMenu (){
             <Stack.Screen 
             name = 'Stackmenu' 
             component = {Stackmenu}  
-            options = {{ tabBarIcon: () => <AntDesign name="home" size={24} color="black" />}} 
+            options = {{ tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,  headerShown: false }} 
             />
             <Stack.Screen 
             name = 'Post' 
             component = {Post} 
-            options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />}} 
+            options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />,  headerShown: false}} 
             />
             <Stack.Screen 
             name = 'Profile' 
             component = {Profile} 
-            options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />}} 
+            options = {{ tabBarIcon: () => <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />,  headerShown: false}} 
             />
 
         </Stack.Navigator>
