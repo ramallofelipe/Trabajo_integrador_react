@@ -2,7 +2,7 @@ import { Pressable, View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { FlatList } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { db } from '../../firebase/config';
+import { db, auth } from '../../firebase/config';
 import firebase from 'firebase';
 
 
