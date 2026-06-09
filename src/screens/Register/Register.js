@@ -1,6 +1,6 @@
 import { View, Text, Pressable, TextInput } from "react-native";
 import {StyleSheet} from 'react-native';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { auth, db } from '../../firebase/config';
 
 function Register(props) {
@@ -12,7 +12,10 @@ function Register(props) {
     const [register, setRegister] = useState(false);
     const [registerError, setRegisterError] = useState('');
 
+    useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
+
     function onSubmit(mail, contraseña, usuario){
+      
       auth.createUserWithEmailAndPassword(mail, contraseña)
       .then( response => {
         setRegister(true);
@@ -23,7 +26,10 @@ function Register(props) {
             createdAt: Date.now()     
         });
       })
-useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
+      .catch(error => {
+        setRegisterError("El Email o Contraseña son Invalidos")
+    })
+
  
     }
   return (

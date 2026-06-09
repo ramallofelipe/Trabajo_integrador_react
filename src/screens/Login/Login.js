@@ -16,7 +16,7 @@ function Login(props) {
         if(!email.includes('@')){
             setLoginError("Email mal escrito")
         } else if(pass.length < 6){
-            setLoginError("La contrasena debe tener mas de 6 caracteres")
+            setLoginError("La contraseña debe tener mas de 6 caracteres")
         } else{
             auth.signInWithEmailAndPassword(email, pass)
     .then((response) => {
@@ -24,7 +24,7 @@ function Login(props) {
         props.navigation.navigate('HolaMenu')
     })
     .catch(error => {
-        setLoginError(error.message)
+        setLoginError("El Email o Contraseña son Invalidos")
     })
         }
  }
