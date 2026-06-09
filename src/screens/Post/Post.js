@@ -18,7 +18,7 @@ function Post (props){
         })
         .then(() => {
             setTexto('')
-            useLinkProps.navigation.navigate('StackMenu', {screen:'Home'})
+            props.navigation.navigate('Stackmenu', {screen:'Home'})
         })
         .catch(error => console.log(error))
     }
