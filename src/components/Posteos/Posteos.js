@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { db, auth } from '../../firebase/config';
 import firebase from 'firebase';
 
+import Comentarios from '../../screens/Comentarios/Comentarios';
 
 
 function Posteos(props) {
@@ -33,7 +34,7 @@ function Posteos(props) {
                 <Text style={styles.corazon}>❤️</Text>
             </Pressable>
             <Text style={styles.textoC}>{item.data.likes.length}</Text>
-            <Pressable style={styles.boton} onPress={()=>props.navigation.navigate('Comentarios', {id:item.id})}>
+            <Pressable style={styles.boton} onPress={() => props.navigation.navigate('Stackmenu',{screen:'Comentarios',  id: item.id })}>
                 <Text style={styles.textoB}>Comentar</Text>
             </Pressable></View>)}/>
     )

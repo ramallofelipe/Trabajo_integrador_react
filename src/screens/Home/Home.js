@@ -10,7 +10,7 @@ import Posteos from '../../components/Posteos/Posteos';
 
 
 
-function Home() {
+function Home(props) {
     const [Loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
 
@@ -37,7 +37,7 @@ function Home() {
     return(
         <View style={styles.container}>
            {Loading ? <ActivityIndicator style={{justifySelf: 'center',
-    alignSelf: 'center',}} size='large' color='#381932'/>:<Posteos posts={posts}/>}
+    alignSelf: 'center',}} size='large' color='#381932'/>:<Posteos posts={posts} navigation={props.navigation}/>}
         </View>
     )
 }

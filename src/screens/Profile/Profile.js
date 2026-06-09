@@ -57,7 +57,7 @@ function Profile(props) {
             <Text style={styles.texto}>Nombre de usuario: {usuario.user}</Text>
             <Text style={styles.texto}>Email: {usuario.mail}</Text>
             <Text style={styles.titulo} >Mis posts:</Text> 
-            <Posteos posts={posts}/>
+            <Posteos posts={posts} navigation={props.navigation}/>
 
             <Pressable style={styles.boton} onPress={() => onSubmit()} >
                 <Text style={styles.textoB}> Salir de la app </Text> 

@@ -16,7 +16,11 @@ const Stack = createNativeStackNavigator();
 
 function Comentarios (){
     
-    
+    return(
+      <View>
+        <Text>hola</Text>
+      </View>
+    )
        
 }
 
