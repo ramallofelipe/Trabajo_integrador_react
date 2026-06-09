@@ -50,11 +50,11 @@ useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.na
                         /> 
 
         <Pressable style = {styles.boton} onPress ={() => onSubmit(mail, contraseña, usuario)}>
-            <Text>Registrame</Text>
+            <Text style={styles.textoB}>Registrame</Text>
         </Pressable>
 
-        <Pressable style={styles.boton1} onPress={()=>props.navigation.navigate('Login')}>
-                                     <Text>Ya tengo cuenta</Text>
+        <Pressable style={styles.boton} onPress={()=>props.navigation.navigate('Login')}>
+                                     <Text style={styles.textoB}>Ya tengo cuenta</Text>
                         </Pressable>
         {registerError ? <Text>{registerError}</Text>: null}
     </View>
@@ -67,37 +67,37 @@ container: {
     alignItems: 'center',
     fontSize: 16,
     width: 430,
-  },
-  boton1: {
-    backgroundColor: '#ff0000',
-    borderRadius: 5,
-    width: 200,
-    padding:5,
+    backgroundColor: "#FFF3E6",
+    flex:1,
+    justifyContent: 'center',
     alignItems: 'center',
-    margin:5,
-    fontWeight:500,
-   },
+    padding:20,
+  },
   formulario: {
     width: '80%',
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#381932',
     padding: 10,
     marginVertical: 10,
-    borderRadius: 5,
+    borderRadius: 30,
     },
   boton: {
-    backgroundColor: '#00ff2a',
-    borderRadius: 5,
-    width: 200,
-    padding:5,
+    backgroundColor: '#381932',
+    borderRadius: 30,
+    width: '80%',
+    padding:10,
     alignItems: 'center',
     margin:5,
     fontWeight:500,
    },
    titulo : {
     fontSize: 30,
-    fontWeight:700
-   }
+    fontWeight:700,
+    color:'#381932',
+   },
+   textoB:{
+    color:"#FFF3E6"
+  }
 }) 
 
 export default Register

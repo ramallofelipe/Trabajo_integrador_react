@@ -31,9 +31,11 @@ function Stackmenu (){
 
 const styles = StyleSheet.create({
 container: {
-    fontSize: 16,
     alignItems: 'center',
-    width: 430
+    fontSize: 16,
+    width: 430,
+    backgroundColor: "#FFF3E6",
+    flex:1,
   },
 }) 
 

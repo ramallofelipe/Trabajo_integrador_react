@@ -53,18 +53,16 @@ function Profile(props) {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.titulo} >Usuario</Text> 
-            <Text>{usuario.user}</Text>
-            <Text>{usuario.mail}</Text>
-            <FlatList
-            data={posts}
-            keyExtractor={item=>item.id.toString()}
-            renderItem={({item})=> <Posteos />}/>
+            <Text style={styles.titulo} >Mi perfil</Text> 
+            <Text style={styles.texto}>Nombre de usuario: {usuario.user}</Text>
+            <Text style={styles.texto}>Email: {usuario.mail}</Text>
+            <Text style={styles.titulo} >Mis posts:</Text> 
+            <Posteos posts={posts}/>
 
-            
-                <Pressable style={styles.boton} onPress={() => onSubmit()} >
-                <Text> Salir de la app </Text> 
-                </Pressable>          
+            <Pressable style={styles.boton} onPress={() => onSubmit()} >
+                <Text style={styles.textoB}> Salir de la app </Text> 
+                </Pressable>   
+                     
         </View>
     )
 }
@@ -72,21 +70,36 @@ const styles = StyleSheet.create({
 container: {
     alignItems: 'center',
     fontSize: 16,
-    width: 430
+    width: 430,
+    backgroundColor: "#FFF3E6",
+    flex:1,
+    padding:20,
   },
    boton: {
-    backgroundColor: '#28a745',
-    borderRadius: 4,
+    backgroundColor: '#381932',
+    borderRadius: 30,
     width: 200,
-    padding:5,
+    padding:10,
     alignItems: 'center',
     margin:5,
     fontWeight:500,
    },
    titulo : {
     fontSize: 30,
-    fontWeight:700
-   }
+    fontWeight:700,
+    color:'#381932',
+    marginBottom:15,
+    alignSelf:'flex-start'
+   },
+   textoB:{
+    color:"#FFF3E6"
+  },
+  texto:{
+    color: '#381932',
+    marginBottom:10,
+    alignSelf:'flex-start',
+    marginLeft:35
+  }
 }) 
 
 export default Profile;

@@ -33,23 +33,23 @@ function Login(props) {
     return(
         <View style={styles.container}>
             <Text style={styles.titulo} >Ingresar</Text>
-            <TextInput style={styles.field} 
+            <TextInput style={styles.formulario} 
                         keyboardType='email-address'
                         placeholder='email'
                         onChangeText={ text => setEmail(text) }
                         value={email} />
-                    <TextInput style={styles.field} 
+                    <TextInput style={styles.formulario} 
                         keyboardType='default'
                         placeholder='password'
                         secureTextEntry={true} 
                         onChangeText={ text => setPassword(text) }
                         value={password}/> 
                 <Pressable style={styles.boton} onPress={() => onSubmit(email,password)} >
-                <Text> Ingresa </Text> 
+                <Text style={styles.textoB}> Ingresa </Text> 
                 </Pressable>          
                 {loginError ? <Text>{loginError}</Text> : null}   
-            <Pressable style={styles.boton1} onPress={()=>props.navigation.navigate('Register')}>
-                             <Text>No tengo cuenta</Text>
+            <Pressable style={styles.boton} onPress={()=>props.navigation.navigate('Register')}>
+                             <Text style={styles.textoB}>No tengo cuenta</Text>
                 </Pressable>
         </View>
     )
@@ -58,37 +58,38 @@ const styles = StyleSheet.create({
 container: {
     alignItems: 'center',
     fontSize: 16,
-    width: 430
+    width: 430,
+    backgroundColor: "#FFF3E6",
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding:20,
   },
-   boton1: {
-    backgroundColor: '#ff0000',
-    borderRadius: 5,
-    width: 200,
-    padding:5,
-    alignItems: 'center',
-    margin:5,
-    fontWeight:500,
-   },
+  textoB:{
+    color:"#FFF3E6"
+  },
    boton: {
-    backgroundColor: '#28a745',
-    borderRadius: 4,
-    width: 200,
-    padding:5,
+    backgroundColor: '#381932',
+    borderRadius: 30,
+    width: '80%',
+    padding:10,
     alignItems: 'center',
     margin:5,
     fontWeight:500,
    },
-   field: {
+   formulario: {
         width: '80%',
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#381932',
         padding: 10,
         marginVertical: 10,
-        borderRadius: 5,
+        borderRadius: 30,
+        color:'#381932',
     },
    titulo : {
     fontSize: 30,
-    fontWeight:700
+    fontWeight:700,
+    color:'#381932',
    }
 }) 
 

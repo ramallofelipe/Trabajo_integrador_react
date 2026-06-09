@@ -22,9 +22,12 @@ function Comentarios (){
 
 const styles = StyleSheet.create({
 container: {
+   alignItems: 'center',
     fontSize: 16,
-    alignItems: 'center',
-    width: 430
+    width: 430,
+    backgroundColor: "#FFF3E6",
+    flex:1,
+    padding:20,
   },
 }) 
 
