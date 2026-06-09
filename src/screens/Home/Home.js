@@ -36,7 +36,7 @@ function Home(props) {
     
     return(
         <View style={styles.container}>
-           {Loading ? <ActivityIndicator style={{justifySelf: 'center',
+           {Loading ? <ActivityIndicator style={{marginTop:400,
     alignSelf: 'center',}} size='large' color='#381932'/>:<Posteos posts={posts} navigation={props.navigation}/>}
         </View>
     )

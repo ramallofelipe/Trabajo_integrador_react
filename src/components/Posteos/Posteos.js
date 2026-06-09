@@ -34,7 +34,7 @@ function Posteos(props) {
                 <Text style={styles.corazon}>❤️</Text>
             </Pressable>
             <Text style={styles.textoC}>{item.data.likes.length}</Text>
-            <Pressable style={styles.boton} onPress={() => props.navigation.navigate('Stackmenu',{screen:'Comentarios',  id: item.id })}>
+            <Pressable style={styles.boton} onPress={() => props.navigation.navigate('Stackmenu',{screen:'Comentarios',  params:{id: item.id} })}>
                 <Text style={styles.textoB}>Comentar</Text>
             </Pressable></View>)}/>
     )
