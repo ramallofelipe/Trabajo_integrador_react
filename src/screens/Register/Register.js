@@ -1,6 +1,6 @@
 import { View, Text, Pressable, TextInput } from "react-native";
 import {StyleSheet} from 'react-native';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { auth, db } from '../../firebase/config';
 
 function Register(props) {
@@ -12,18 +12,31 @@ function Register(props) {
     const [register, setRegister] = useState(false);
     const [registerError, setRegisterError] = useState('');
 
+    useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
+
     function onSubmit(mail, contraseña, usuario){
+
+      if (mail === '' || contraseña === '' || usuario === '') {
+        setRegisterError('Todos los campos son obligatorios');
+        return; 
+    }
       auth.createUserWithEmailAndPassword(mail, contraseña)
       .then( response => {
-        setRegister(true);
-        props.navigation.navigate('Login');
+        
         db.collection('users').add({
             email: mail,              
             username: usuario,        
             createdAt: Date.now()     
-        });
+        })
+      .then(() => {
+          setRegister(true);
+          props.navigation.navigate('Login')
+        })
       })
-useEffect(() => {auth.onAuthStateChanged(user => {if (user){ props.navigation.navigate('HolaMenu')}})},[])
+      .catch(error => {
+        setRegisterError("El Email o Contraseña son Invalidos")
+    })
+
  
     }
   return (
